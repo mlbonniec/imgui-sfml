@@ -67,7 +67,7 @@ find_package(OpenGL REQUIRED)
 include(GNUInstallDirs)
 
 # Define ImGui-SFML
-add_library(ImGui-SFML imgui-SFML.cpp ${IMGUI_SOURCES})
+add_library(ImGui-SFML imgui-SFML.cpp ${IMGUI_SOURCES} TextEditor.cpp)
 add_library(ImGui-SFML::ImGui-SFML ALIAS ImGui-SFML)
 target_include_directories(ImGui-SFML PUBLIC
   $<BUILD_INTERFACE:${IMGUI_INCLUDE_DIR}>
