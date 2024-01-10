@@ -67,7 +67,7 @@ find_package(OpenGL REQUIRED)
 include(GNUInstallDirs)
 
 # Define ImGui-SFML
-add_library(ImGui-SFML imgui-SFML.cpp ${IMGUI_SOURCES} TextEditor.cpp)
+add_library(ImGui-SFML imgui-SFML.cpp TextEditor.cpp ${IMGUI_SOURCES})
 add_library(ImGui-SFML::ImGui-SFML ALIAS ImGui-SFML)
 target_include_directories(ImGui-SFML PUBLIC
   $<BUILD_INTERFACE:${IMGUI_INCLUDE_DIR}>
@@ -115,6 +115,7 @@ target_compile_definitions(ImGui-SFML PUBLIC IMGUI_USER_CONFIG="${IMGUI_SFML_CON
 set(IMGUI_SFML_PUBLIC_HEADERS
   ${PROJECT_SOURCE_DIR}/imgui-SFML.h
   ${PROJECT_SOURCE_DIR}/imgui-SFML_export.h
+  ${PROJECT_SOURCE_DIR}/TextEditor.h
   ${IMGUI_PUBLIC_HEADERS}
 )
 if(IMGUI_SFML_USE_DEFAULT_CONFIG OR (NOT DEFINED "${IMGUI_SFML_CONFIG_INSTALL_DIR}"))
